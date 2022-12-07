@@ -1,11 +1,25 @@
 import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-const FoodCard = ({ price, unit, name, description, imageURL }) => {
+const FoodCard = ({
+  id,
+  price = 5,
+  unit,
+  name = "karniyarik",
+  description,
+  imageURL = "https://links.papareact.com/wru",
+}) => {
   const navigation = useNavigation();
 
   function handlePress() {
-    navigation.navigate("Detail");
+    navigation.navigate("Detail", {
+      id,
+      name,
+      price,
+      unit,
+      description,
+      imageURL,
+    });
   }
 
   return (
@@ -14,12 +28,12 @@ const FoodCard = ({ price, unit, name, description, imageURL }) => {
         <Image
           className="w-16 h-16 rounded-t-sm self-center"
           source={{
-            uri: "https://links.papareact.com/wru",
+            uri: imageURL,
           }}
         />
         <View className="flex flex-row justify-center gap-4">
-          <Text>Yemek ismi</Text>
-          <Text>5tl</Text>
+          <Text>{name}</Text>
+          <Text>{price}</Text>
         </View>
       </Pressable>
     </View>

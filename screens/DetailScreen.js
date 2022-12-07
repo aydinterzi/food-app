@@ -1,7 +1,9 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-const DetailScreen = () => {
+const DetailScreen = ({ navigation, route }) => {
+  console.log(navigation);
+  console.log(route.params);
   return (
     <SafeAreaView className="flex-1 border">
       <Image
