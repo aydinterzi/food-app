@@ -1,0 +1,72 @@
+{
+  "menu": {
+    "appetizers": {
+      "item1": {
+        "name": "Wings",
+        "description": "Hot and spicy chicken wings",
+        "price": 7.50,
+        "image": "https://www.example.com/wings.jpg",
+        "unit": "piece"
+      },
+      "item2": {
+        "name": "Mozzarella Sticks",
+        "description": "Breaded mozzarella cheese served with marinara sauce",
+        "price": 6.00,
+        "image": "https://www.example.com/mozzarella-sticks.jpg",
+        "unit": "piece"
+      },
+      "item3": {
+        "name": "Bruschetta",
+        "description": "Grilled bread topped with tomatoes, garlic, and basil",
+        "price": 5.00,
+        "image": "https://www.example.com/bruschetta.jpg",
+        "unit": "slice"
+      }
+    },
+    "entrees": {
+      "item1": {
+        "name": "Chicken Parmesan",
+        "description": "Breaded chicken topped with marinara sauce and mozzarella cheese, served with spaghetti",
+        "price": 14.00,
+        "image": "https://www.example.com/chicken-parmesan.jpg",
+        "unit": "plate"
+      },
+      "item2": {
+        "name": "Lasagna",
+        "description": "Layers of pasta, ground beef, and cheese, topped with marinara sauce and mozzarella cheese",
+        "price": 12.00,
+        "image": "https://www.example.com/lasagna.jpg",
+        "unit": "plate"
+      },
+      "item3": {
+        "name": "Pesto Pasta",
+        "description": "Spaghetti tossed in pesto sauce with cherry tomatoes and pine nuts",
+        "price": 11.00,
+        "image": "https://www.example.com/pesto-pasta.jpg",
+        "unit": "plate"
+      }
+    },
+    "desserts": {
+      "item1": {
+        "name": "Cheesecake",
+        "description": "Classic New York-style cheesecake",
+        "price": 6.00,
+        "image": "https://www.example.com/cheesecake.jpg",
+        "unit": "slice"
+      },
+      "item2": {
+        "name": "Tiramisu",
+        "description": "Ladyfingers soaked in espresso and topped with mascarpone cream",
+        "price": 5.00,
+        "image": "https://www.example.com/tiramisu.jpg",
+        "unit": "slice"
+      },
+      "item3": {
+        "name": "Chocolate Cake",
+        "description": "Moist chocolate cake with chocolate frosting",
+        "price": 7.00,
+        "image": "https://www.example.com/chocolate-cake.jpg",
+        "unit": "slice"}
+      }
+    }
+  }

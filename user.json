@@ -1,0 +1,19 @@
+{
+  "users": {
+    "user1": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "123456"
+    },
+    "user2": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "abcdef"
+    },
+    "user3": {
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@example.com",
+      "password": "qwerty"
+    }
+  }
+}
