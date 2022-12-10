@@ -7,7 +7,7 @@ const FoodCard = ({
   unit,
   name = "karniyarik",
   description,
-  imageURL = "https://links.papareact.com/wru",
+  image = "https://links.papareact.com/wru",
 }) => {
   const navigation = useNavigation();
 
@@ -18,22 +18,25 @@ const FoodCard = ({
       price,
       unit,
       description,
-      imageURL,
+      image,
     });
   }
 
   return (
-    <View className="flex w-1/4">
-      <Pressable onPress={handlePress}>
+    <View className="flex w-36 h-36  bg-orange-400 rounded-2xl mr-5">
+      <Pressable
+        className="flex items-center justify-evenly h-full w-full"
+        onPress={handlePress}
+      >
         <Image
-          className="w-16 h-16 rounded-t-sm self-center"
+          className="w-16 h-16 rounded-t-sm"
           source={{
-            uri: imageURL,
+            uri: "https://links.papareact.com/wru",
           }}
         />
-        <View className="flex flex-row justify-center gap-4">
-          <Text>{name}</Text>
-          <Text>{price}</Text>
+        <View className="flex  flex-row justify-evenly">
+          <Text className="basis-1/2">{name}</Text>
+          <Text>{price} ₺</Text>
         </View>
       </Pressable>
     </View>
