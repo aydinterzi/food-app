@@ -23,7 +23,7 @@ const FoodCard = ({
   }
 
   return (
-    <View className="flex w-36 h-36  bg-orange-400 rounded-2xl mr-5">
+    <View className="flex w-36 h-36 bg-white rounded-2xl mr-5">
       <Pressable
         className="flex items-center justify-evenly h-full w-full"
         onPress={handlePress}

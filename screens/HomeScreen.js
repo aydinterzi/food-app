@@ -17,8 +17,8 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView className="flex">
-      <View className="flex-row justify-between p-2">
+    <SafeAreaView className="flex-1 flex-col bg-gray-100">
+      <View className="flex-row justify-between p-2 mb-5">
         <View className="flex-row gap-4">
           <Image
             className="w-16 h-16 rounded-full"
@@ -30,32 +30,31 @@ const HomeScreen = () => {
         </View>
         <Text>User</Text>
       </View>
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        className="mb-5"
-      >
-        {food.appetizers.map((item) => (
-          <FoodCard {...item} />
-        ))}
+      <View className="mb-3">
+        <Text className="text-2xl font-bold">What would you like to eat?</Text>
+      </View>
+      <View>
+        <Text className="text-xl font-medium">Appetizers</Text>
+      </View>
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+        {food.appetizers &&
+          food.appetizers.map((item) => <FoodCard {...item} />)}
       </ScrollView>
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        className="mb-5"
-      >
-        {food.entrees.map((item) => (
-          <FoodCard {...item} />
-        ))}
+      <View>
+        <Text className="text-xl font-medium">Entrees</Text>
+      </View>
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+        {food.entrees && food.entrees.map((item) => <FoodCard {...item} />)}
       </ScrollView>
+      <View>
+        <Text className="text-xl font-medium">Desserts</Text>
+      </View>
       <ScrollView
         showsHorizontalScrollIndicator={false}
         horizontal
         className="mb-5"
       >
-        {food.appetizers.map((item) => (
-          <FoodCard {...item} />
-        ))}
+        {food.desserts && food.desserts.map((item) => <FoodCard {...item} />)}
       </ScrollView>
     </SafeAreaView>
   );
