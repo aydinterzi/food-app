@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import FoodCard from "../components/FoodCard";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getFood } from "../utils/http";
+import { signOutFunc } from "../config/firebase";
 
 const HomeScreen = () => {
   const [food, setFood] = useState([]);
@@ -16,6 +17,11 @@ const HomeScreen = () => {
     getFoods();
   }, []);
 
+  const signOut = async () => {
+    const response = await signOutFunc();
+    console.log(response);
+  };
+
   return (
     <SafeAreaView className="flex-1 flex-col bg-gray-100">
       <View className="flex-row justify-between p-2 mb-5">
@@ -28,7 +34,9 @@ const HomeScreen = () => {
           />
           <Text>Current location</Text>
         </View>
-        <Text>User</Text>
+        <Pressable onPress={signOut}>
+          <Text>User</Text>
+        </Pressable>
       </View>
       <View className="mb-3">
         <Text className="text-2xl font-bold">What would you like to eat?</Text>
@@ -38,7 +46,9 @@ const HomeScreen = () => {
       </View>
       <ScrollView showsHorizontalScrollIndicator={false} horizontal>
         {food.appetizers &&
-          food.appetizers.map((item) => <FoodCard {...item} />)}
+          food.appetizers.map((item, index) => (
+            <FoodCard {...item} id={index} />
+          ))}
       </ScrollView>
       <View>
         <Text className="text-xl font-medium">Entrees</Text>
