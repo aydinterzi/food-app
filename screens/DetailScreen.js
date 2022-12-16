@@ -6,16 +6,26 @@ import { CartContext } from "../context/store";
 const DetailScreen = ({ navigation, route }) => {
   const { id, name, price, unit, description, image } = route.params;
   const cartContext = useContext(CartContext);
+  const itemCount = cartContext.cart.map((item) => item.id === id).quantity;
+
   function handleAddtoCart() {
     cartContext.addToCart({
       id,
       name,
       price,
       unit,
-      piece: 1,
+      quantity: 1,
     });
     console.log(cartContext.cart);
   }
+
+  const handleIncrease = () => {
+    cartContext.updateQuantity(id, 1);
+  };
+
+  const handleDecrease = () => {
+    cartContext.updateQuantity(id, -1);
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
@@ -44,6 +54,24 @@ const DetailScreen = ({ navigation, route }) => {
           </View>
         </Pressable>
       </View>
+      {itemCount > 0 && (
+        <View className="flex-1 items-center justify-end">
+          <Pressable onPress={handleIncrease}>
+            <View className="w-80 p-5 flex items-center bg-green-500 mb-4 rounded-full">
+              <Text className="text-lg font-bold text-white">+</Text>
+            </View>
+          </Pressable>
+        </View>
+      )}
+      {itemCount > 0 && (
+        <View className="flex-1 items-center justify-end">
+          <Pressable onPress={handleDecrease}>
+            <View className="w-80 p-5 flex items-center bg-green-500 mb-4 rounded-full">
+              <Text className="text-lg font-bold text-white">-</Text>
+            </View>
+          </Pressable>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
