@@ -15,9 +15,14 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateQuantity = (id, delta) => {
-    setItems((prevItems) =>
+    setCart((prevItems) =>
       prevItems.map((item) => {
         if (item.id === id) {
+          if (item.quantity + delta === 0) {
+            removeFromCart(item.id);
+            return;
+          }
+
           return {
             ...item,
             quantity: item.quantity + delta,
@@ -28,8 +33,8 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const removeFromCart = (item) => {
-    setCart(cart.filter((cartItem) => cartItem.id !== item.id));
+  const removeFromCart = (id) => {
+    setCart(cart.filter((cartItem) => cartItem.id !== id));
   };
 
   const clearCart = () => {
