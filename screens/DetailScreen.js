@@ -1,5 +1,5 @@
 import { View, Text, Image, Pressable } from "react-native";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CartContext } from "../context/store";
 import { Ionicons } from "@expo/vector-icons";
@@ -62,15 +62,15 @@ const DetailScreen = ({ navigation, route }) => {
 
       {itemCount > 0 && (
         <View className="flex-1 items-center justify-end">
-          <View className="w-80 p-5 flex flex-row justify-evenly bg-green-500 mb-4 rounded-full">
+          <View className="w-80 p-5 flex flex-row justify-evenly bg-green-500 mb-4 rounded-full items-center">
             <Pressable onPress={handleIncrease}>
-              <View>
+              <View className="px-3">
                 <Ionicons name="add" size={24} color="white" />
               </View>
             </Pressable>
             <Text className="text-lg font-bold text-white">{itemCount}</Text>
             <Pressable onPress={handleDecrease}>
-              <View>
+              <View className="px-3">
                 <Ionicons name="remove" size={24} color="white" />
               </View>
             </Pressable>
