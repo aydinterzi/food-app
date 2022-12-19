@@ -54,7 +54,7 @@ const HomeScreen = () => {
       <ScrollView showsHorizontalScrollIndicator={false} horizontal>
         {food.appetizers &&
           food.appetizers.map((item, index) => (
-            <FoodCard {...item} id={index} key={index} />
+            <FoodCard {...item} id={item.name} key={index} />
           ))}
       </ScrollView>
       <View>
@@ -62,7 +62,9 @@ const HomeScreen = () => {
       </View>
       <ScrollView showsHorizontalScrollIndicator={false} horizontal>
         {food.entrees &&
-          food.entrees.map((item, index) => <FoodCard {...item} key={index} />)}
+          food.entrees.map((item, index) => (
+            <FoodCard {...item} id={item.name} key={index} />
+          ))}
       </ScrollView>
       <View>
         <Text className="text-xl font-medium">Desserts</Text>
@@ -74,7 +76,7 @@ const HomeScreen = () => {
       >
         {food.desserts &&
           food.desserts.map((item, index) => (
-            <FoodCard {...item} key={index} />
+            <FoodCard {...item} id={item.name} key={index} />
           ))}
       </ScrollView>
     </SafeAreaView>
