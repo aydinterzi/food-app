@@ -29,7 +29,6 @@ export const signIn = (email, password) => {
 };
 
 export const signUp = (email, password) => {
-  console.log(email, password);
   return createUserWithEmailAndPassword(auth, email, password);
 };
 

@@ -39,7 +39,9 @@ const HomeScreen = () => {
               uri: "https://links.papareact.com/wru",
             }}
           />
-          <Text>Current location</Text>
+          <Pressable onPress={() => navigation.navigate("Map")}>
+            <Text>Current location</Text>
+          </Pressable>
         </View>
         <Pressable onPress={navigateCart}>
           <Text>User</Text>
