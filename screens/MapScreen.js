@@ -4,7 +4,7 @@ import MapPicker from "../components/MapPicker";
 
 export default function MapScreen() {
   return (
-    <View clasName="flex-1">
+    <View className="flex-1">
       <MapPicker />
     </View>
   );

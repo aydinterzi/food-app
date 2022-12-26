@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Button, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const MapPicker = () => {
   const [location, setLocation] = useState(null);
@@ -27,10 +28,10 @@ const MapPicker = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView className="flex-1 justify-center items-center">
       {location ? (
         <MapView
-          style={styles.map}
+          className="w-full h-full"
           initialRegion={{
             latitude: location.coords.latitude,
             longitude: location.coords.longitude,
@@ -47,21 +48,8 @@ const MapPicker = () => {
           />
         </MapView>
       ) : null}
-      <Text>{text}</Text>
-    </View>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  map: {
-    width: "100%",
-    height: 800,
-  },
-});
 
 export default MapPicker;

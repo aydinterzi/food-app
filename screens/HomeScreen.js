@@ -31,18 +31,18 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className="flex-1 flex-col bg-gray-100">
-      <View className="flex-row justify-between p-2 mb-5">
-        <View className="flex-row gap-4">
-          <Image
-            className="w-16 h-16 rounded-full"
-            source={{
-              uri: "https://links.papareact.com/wru",
-            }}
-          />
-          <Pressable onPress={() => navigation.navigate("Map")}>
-            <Text>Current location</Text>
-          </Pressable>
-        </View>
+      <View className="flex-row justify-between p-2 mb-5 ">
+        <Image
+          className="w-16 h-16 rounded-full"
+          source={{
+            uri: "https://links.papareact.com/wru",
+          }}
+        />
+
+        <Pressable onPress={() => navigation.navigate("Map")}>
+          <Text>Current location</Text>
+        </Pressable>
+
         <Pressable onPress={navigateCart}>
           <Text>User</Text>
         </Pressable>
